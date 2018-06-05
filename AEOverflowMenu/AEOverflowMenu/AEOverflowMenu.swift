@@ -215,10 +215,17 @@ struct AEOverflowItem {
         addSubview(tableView)
         
         // Constrain table view inside of parent view
-        tableView.leftAnchor.constraint(equalTo: leftAnchor).isActive = true
-        tableView.rightAnchor.constraint(equalTo: rightAnchor).isActive = true
-        tableView.topAnchor.constraint(equalTo: topAnchor).isActive = true
-        tableView.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
+        if #available(iOS 9.0, *) {
+            tableView.leftAnchor.constraint(equalTo: leftAnchor).isActive = true
+            tableView.rightAnchor.constraint(equalTo: rightAnchor).isActive = true
+            tableView.topAnchor.constraint(equalTo: topAnchor).isActive = true
+            tableView.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
+        } else {
+            NSLayoutConstraint(item: tableView, attribute: .left, relatedBy: .equal, toItem: self, attribute: .left, multiplier: 1, constant: 0).isActive = true
+            NSLayoutConstraint(item: tableView, attribute: .right, relatedBy: .equal, toItem: self, attribute: .right, multiplier: 1, constant: 0).isActive = true
+            NSLayoutConstraint(item: tableView, attribute: .top, relatedBy: .equal, toItem: self, attribute: .top, multiplier: 1, constant: 0).isActive = true
+            NSLayoutConstraint(item: tableView, attribute: .bottom, relatedBy: .equal, toItem: self, attribute: .bottom, multiplier: 1, constant: 0).isActive = true
+        }
     }
     
     /// Setup the overflow menu
@@ -228,6 +235,8 @@ struct AEOverflowItem {
     ///     2. Given a button or navigation bar button, this menu will be constrained to the button (menu will be constrained to the corner specified in cornerAnchor) and a callback will be setup for the button to toggle the menu when clicked
     ///
     /// Only button or barButton should be specified, never both. If neither buttons are set, then the menu will not be constrained and no callback will be set. Therefore, this must be done manually in the view controller.
+    ///
+    /// This should be called in viewDidLoad method of UIViewController
     ///
     /// - Parameters:
     ///   - viewController: Parent view controller that this view is a child of
@@ -256,22 +265,42 @@ struct AEOverflowItem {
         
         // Note: Make sure that the correct expand corner is set
         if let view = anchorView {
-            switch cornerAnchor {
-            case .TopLeft:
-                topAnchor.constraint(equalTo: view.topAnchor).isActive = true
-                leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
-                
-            case .TopRight:
-                topAnchor.constraint(equalTo: view.topAnchor).isActive = true
-                rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
-                
-            case .BottomLeft:
-                bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
-                leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
-                
-            case .BottomRight:
-                bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
-                rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
+            if #available(iOS 9.0, *) {
+                switch cornerAnchor {
+                case .TopLeft:
+                    topAnchor.constraint(equalTo: view.topAnchor).isActive = true
+                    leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
+                    
+                case .TopRight:
+                    topAnchor.constraint(equalTo: view.topAnchor).isActive = true
+                    rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
+                    
+                case .BottomLeft:
+                    bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+                    leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
+                    
+                case .BottomRight:
+                    bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+                    rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
+                }
+            } else {
+                switch cornerAnchor {
+                case .TopLeft:
+                    NSLayoutConstraint(item: self, attribute: .top, relatedBy: .equal, toItem: view, attribute: .top, multiplier: 1, constant: 0).isActive = true
+                    NSLayoutConstraint(item: self, attribute: .left, relatedBy: .equal, toItem: view, attribute: .left, multiplier: 1, constant: 0).isActive = true
+                    
+                case .TopRight:
+                    NSLayoutConstraint(item: self, attribute: .top, relatedBy: .equal, toItem: view, attribute: .top, multiplier: 1, constant: 0).isActive = true
+                    NSLayoutConstraint(item: self, attribute: .right, relatedBy: .equal, toItem: view, attribute: .right, multiplier: 1, constant: 0).isActive = true
+                    
+                case .BottomLeft:
+                    NSLayoutConstraint(item: self, attribute: .bottom, relatedBy: .equal, toItem: view, attribute: .bottom, multiplier: 1, constant: 0).isActive = true
+                    NSLayoutConstraint(item: self, attribute: .left, relatedBy: .equal, toItem: view, attribute: .left, multiplier: 1, constant: 0).isActive = true
+                    
+                case .BottomRight:
+                    NSLayoutConstraint(item: self, attribute: .bottom, relatedBy: .equal, toItem: view, attribute: .bottom, multiplier: 1, constant: 0).isActive = true
+                    NSLayoutConstraint(item: self, attribute: .right, relatedBy: .equal, toItem: view, attribute: .right, multiplier: 1, constant: 0).isActive = true
+                }
             }
         }
     }
@@ -281,6 +310,9 @@ struct AEOverflowItem {
     /// This method does two things:
     ///     1. Adds gesture recognizer to the parent view controller so that taps outside of the oveflow menu can be registered to hide the menu
     ///     2. This menu will be constrained to the button (menu will be constrained to the corner specified in cornerAnchor) and a callback will be setup for the button to toggle the menu when clicked
+    ///
+    ///
+    /// This should be called in viewDidLoad method of UIViewController
     ///
     /// - Parameters:
     ///   - viewController: Parent view controller that this view is a child of
@@ -294,6 +326,9 @@ struct AEOverflowItem {
     /// This method does two things:
     ///     1. Adds gesture recognizer to the parent view controller so that taps outside of the oveflow menu can be registered to hide the menu
     ///     2. This menu will be constrained to the button (menu will be constrained to the corner specified in cornerAnchor) and a callback will be setup for the button to toggle the menu when clicked
+    ///
+    ///
+    /// This should be called in viewDidLoad method of UIViewController
     ///
     /// - Parameters:
     ///   - viewController: Parent view controller that this view is a child of
@@ -389,6 +424,7 @@ struct AEOverflowItem {
     
     // TODO: Create a nice test/demo
     // TODO: Create README and documentation for the library
+    // TODO: Forgot to doucment the properties
     
     // MARK: Item related functions
     
