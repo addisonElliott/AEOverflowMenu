@@ -14,10 +14,17 @@ public enum AnimationOption {
     case None
 }
 
-public enum Corner {
+public enum AEAnchorCorner {
+    /// Anchors overflow menu to the top-left corner of the connected button. If animation is set to expand, then the menu will be expanded/collapsed from this corner
     case TopLeft
+    
+    /// Anchors overflow menu to the top-right corner of the connected button. If animation is set to expand, then the menu will be expanded/collapsed from this corner
     case TopRight
+    
+    /// Anchors overflow menu to the bottom-left corner of the connected button. If animation is set to expand, then the menu will be expanded/collapsed from this corner
     case BottomLeft
+    
+    /// Anchors overflow menu to the bottom-right corner of the connected button. If animation is set to expand, then the menu will be expanded/collapsed from this corner
     case BottomRight
     
     var point: CGPoint {
@@ -46,10 +53,7 @@ struct AEOverflowItem {
     // MARK: Private variables and constants
     
     private var tableView: UITableView!
-    
     private var items: [AEOverflowItem] = [AEOverflowItem]()
-    
-    static let animationExpandCornerAnchorPoints: [CGPoint] = [CGPoint()]
     
     // MARK: Properties
     
@@ -166,7 +170,7 @@ struct AEOverflowItem {
     public var animationHideType: AnimationOption = .Fade
     public var animationHideDuration: Double = 0.4
     
-    public var cornerAnchor: Corner = .TopRight
+    public var cornerAnchor: AEAnchorCorner = .TopRight
     
     // MARK: Private functions
     
@@ -206,6 +210,18 @@ struct AEOverflowItem {
         tableView.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
     }
     
+    /// Setup the overflow menu
+    ///
+    /// This method does two things:
+    ///     1. Adds gesture recognizer to the parent view controller so that taps outside of the oveflow menu can be registered to hide the menu
+    ///     2. Given a button or navigation bar button, this menu will be constrained to the button (menu will be constrained to the corner specified in cornerAnchor) and a callback will be setup for the button to toggle the menu when clicked
+    ///
+    /// Only button or barButton should be specified, never both. If neither buttons are set, then the menu will not be constrained and no callback will be set. Therefore, this must be done manually in the view controller.
+    ///
+    /// - Parameters:
+    ///   - viewController: Parent view controller that this view is a child of
+    ///   - button: Button that should trigger the overflow menu
+    ///   - barButton: Navigation bar button that should trigger the overflow menu
     public func setup(_ viewController: UIViewController, button: UIButton? = nil, barButton: UIBarButtonItem? = nil) {
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(viewTapped(sender:)))
         tapGestureRecognizer.delegate = self
@@ -249,10 +265,28 @@ struct AEOverflowItem {
         }
     }
     
+    /// Setup the overflow menu.
+    ///
+    /// This method does two things:
+    ///     1. Adds gesture recognizer to the parent view controller so that taps outside of the oveflow menu can be registered to hide the menu
+    ///     2. This menu will be constrained to the button (menu will be constrained to the corner specified in cornerAnchor) and a callback will be setup for the button to toggle the menu when clicked
+    ///
+    /// - Parameters:
+    ///   - viewController: Parent view controller that this view is a child of
+    ///   - button: Button that should trigger the overflow menu
     public func setup(_ viewController: UIViewController, button: UIButton) {
         setup(viewController, button: button, barButton: nil)
     }
     
+    /// Setup the overflow menu.
+    ///
+    /// This method does two things:
+    ///     1. Adds gesture recognizer to the parent view controller so that taps outside of the oveflow menu can be registered to hide the menu
+    ///     2. This menu will be constrained to the button (menu will be constrained to the corner specified in cornerAnchor) and a callback will be setup for the button to toggle the menu when clicked
+    ///
+    /// - Parameters:
+    ///   - viewController: Parent view controller that this view is a child of
+    ///   - barButton: Navigation bar button that should trigger the overflow menu
     public func setup(_ viewController: UIViewController, barButton: UIBarButtonItem) {
         setup(viewController, button: nil, barButton: barButton)
     }

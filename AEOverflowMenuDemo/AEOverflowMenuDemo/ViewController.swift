@@ -60,7 +60,7 @@ class ViewController: UIViewController {
         button.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         button.topAnchor.constraint(equalTo: label.bottomAnchor, constant: 50.0).isActive = true
         
-        overflowMenu.cornerAnchor = .BottomRight
+        overflowMenu.cornerAnchor = .BottomLeft
         overflowMenu.setup(self, button: button)
     }
     
