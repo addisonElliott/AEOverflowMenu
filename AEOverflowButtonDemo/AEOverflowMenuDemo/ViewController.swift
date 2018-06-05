@@ -1,13 +1,13 @@
 //
 //  ViewController.swift
-//  AEOverflowButtonDemo
+//  AEOverflowMenuDemo
 //
 //  Created by Social Local Mobile on 5/31/18.
 //  Copyright © 2018 Addison Elliott. All rights reserved.
 //
 
 import UIKit
-import AEOverflowButton
+import AEOverflowMenu
 
 class ViewController: UIViewController {
     var label: UILabel!

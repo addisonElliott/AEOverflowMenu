@@ -7,141 +7,182 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		248E3A4820C04CCC00ABC9F4 /* AEOverflowMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 248E3A3F20C0372B00ABC9F4 /* AEOverflowMenu.swift */; };
-		24C0A78220C02F8600906245 /* AEOverflowButton.h in Headers */ = {isa = PBXBuildFile; fileRef = 24C0A78020C02F8600906245 /* AEOverflowButton.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		248E3A5620C0733500ABC9F4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 248E3A5520C0733500ABC9F4 /* Main.storyboard */; };
+		24C0A79520C02F9600906245 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C0A79420C02F9600906245 /* AppDelegate.swift */; };
+		24C0A79720C02F9600906245 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C0A79620C02F9600906245 /* ViewController.swift */; };
+		24C0A79C20C02F9600906245 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 24C0A79B20C02F9600906245 /* Assets.xcassets */; };
+		24C0A79F20C02F9600906245 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 24C0A79D20C02F9600906245 /* LaunchScreen.storyboard */; };
+		24DB775A20C6BB3000601383 /* AEOverflowMenu.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24DB775920C6BB3000601383 /* AEOverflowMenu.framework */; };
+		24DB775B20C6BB3000601383 /* AEOverflowMenu.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 24DB775920C6BB3000601383 /* AEOverflowMenu.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		248E3A4720C0377700ABC9F4 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				24DB775B20C6BB3000601383 /* AEOverflowMenu.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
-		248E3A3F20C0372B00ABC9F4 /* AEOverflowMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AEOverflowMenu.swift; sourceTree = "<group>"; };
-		24C0A77D20C02F8600906245 /* AEOverflowButton.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AEOverflowButton.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		24C0A78020C02F8600906245 /* AEOverflowButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AEOverflowButton.h; sourceTree = "<group>"; };
-		24C0A78120C02F8600906245 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		248E3A5520C0733500ABC9F4 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		24C0A79120C02F9600906245 /* AEOverflowMenuDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AEOverflowMenuDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		24C0A79420C02F9600906245 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		24C0A79620C02F9600906245 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		24C0A79B20C02F9600906245 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		24C0A79E20C02F9600906245 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		24C0A7A020C02F9600906245 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		24DB775920C6BB3000601383 /* AEOverflowMenu.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = AEOverflowMenu.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		24C0A77920C02F8600906245 /* Frameworks */ = {
+		24C0A78E20C02F9600906245 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				24DB775A20C6BB3000601383 /* AEOverflowMenu.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		24C0A77320C02F8600906245 = {
+		24C0A78820C02F9600906245 = {
 			isa = PBXGroup;
 			children = (
-				24C0A77F20C02F8600906245 /* AEOverflowButton */,
-				24C0A77E20C02F8600906245 /* Products */,
+				24DB775920C6BB3000601383 /* AEOverflowMenu.framework */,
+				24C0A79320C02F9600906245 /* AEOverflowMenuDemo */,
+				24C0A79220C02F9600906245 /* Products */,
+				24DB775620C6BB1E00601383 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
-		24C0A77E20C02F8600906245 /* Products */ = {
+		24C0A79220C02F9600906245 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				24C0A77D20C02F8600906245 /* AEOverflowButton.framework */,
+				24C0A79120C02F9600906245 /* AEOverflowMenuDemo.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		24C0A77F20C02F8600906245 /* AEOverflowButton */ = {
+		24C0A79320C02F9600906245 /* AEOverflowMenuDemo */ = {
 			isa = PBXGroup;
 			children = (
-				248E3A3F20C0372B00ABC9F4 /* AEOverflowMenu.swift */,
-				24C0A78020C02F8600906245 /* AEOverflowButton.h */,
-				24C0A78120C02F8600906245 /* Info.plist */,
+				248E3A5520C0733500ABC9F4 /* Main.storyboard */,
+				24C0A79420C02F9600906245 /* AppDelegate.swift */,
+				24C0A79620C02F9600906245 /* ViewController.swift */,
+				24C0A79B20C02F9600906245 /* Assets.xcassets */,
+				24C0A79D20C02F9600906245 /* LaunchScreen.storyboard */,
+				24C0A7A020C02F9600906245 /* Info.plist */,
 			);
-			path = AEOverflowButton;
+			path = AEOverflowMenuDemo;
+			sourceTree = "<group>";
+		};
+		24DB775620C6BB1E00601383 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
-/* Begin PBXHeadersBuildPhase section */
-		24C0A77A20C02F8600906245 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				24C0A78220C02F8600906245 /* AEOverflowButton.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXHeadersBuildPhase section */
-
 /* Begin PBXNativeTarget section */
-		24C0A77C20C02F8600906245 /* AEOverflowButton */ = {
+		24C0A79020C02F9600906245 /* AEOverflowMenuDemo */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 24C0A78520C02F8600906245 /* Build configuration list for PBXNativeTarget "AEOverflowButton" */;
+			buildConfigurationList = 24C0A7A320C02F9600906245 /* Build configuration list for PBXNativeTarget "AEOverflowMenuDemo" */;
 			buildPhases = (
-				24C0A77820C02F8600906245 /* Sources */,
-				24C0A77920C02F8600906245 /* Frameworks */,
-				24C0A77A20C02F8600906245 /* Headers */,
-				24C0A77B20C02F8600906245 /* Resources */,
+				24C0A78D20C02F9600906245 /* Sources */,
+				24C0A78E20C02F9600906245 /* Frameworks */,
+				24C0A78F20C02F9600906245 /* Resources */,
+				248E3A4720C0377700ABC9F4 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = AEOverflowButton;
-			productName = AEOverflowButton;
-			productReference = 24C0A77D20C02F8600906245 /* AEOverflowButton.framework */;
-			productType = "com.apple.product-type.framework";
+			name = AEOverflowMenuDemo;
+			productName = AEOverflowButtonDemo;
+			productReference = 24C0A79120C02F9600906245 /* AEOverflowMenuDemo.app */;
+			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		24C0A77420C02F8600906245 /* Project object */ = {
+		24C0A78920C02F9600906245 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0930;
 				LastUpgradeCheck = 0930;
 				ORGANIZATIONNAME = "Addison Elliott";
 				TargetAttributes = {
-					24C0A77C20C02F8600906245 = {
+					24C0A79020C02F9600906245 = {
 						CreatedOnToolsVersion = 9.3;
-						LastSwiftMigration = 0930;
 					};
 				};
 			};
-			buildConfigurationList = 24C0A77720C02F8600906245 /* Build configuration list for PBXProject "AEOverflowButton" */;
+			buildConfigurationList = 24C0A78C20C02F9600906245 /* Build configuration list for PBXProject "AEOverflowMenuDemo" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
-			mainGroup = 24C0A77320C02F8600906245;
-			productRefGroup = 24C0A77E20C02F8600906245 /* Products */;
+			mainGroup = 24C0A78820C02F9600906245;
+			productRefGroup = 24C0A79220C02F9600906245 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				24C0A77C20C02F8600906245 /* AEOverflowButton */,
+				24C0A79020C02F9600906245 /* AEOverflowMenuDemo */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		24C0A77B20C02F8600906245 /* Resources */ = {
+		24C0A78F20C02F9600906245 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				248E3A5620C0733500ABC9F4 /* Main.storyboard in Resources */,
+				24C0A79F20C02F9600906245 /* LaunchScreen.storyboard in Resources */,
+				24C0A79C20C02F9600906245 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		24C0A77820C02F8600906245 /* Sources */ = {
+		24C0A78D20C02F9600906245 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				248E3A4820C04CCC00ABC9F4 /* AEOverflowMenu.swift in Sources */,
+				24C0A79720C02F9600906245 /* ViewController.swift in Sources */,
+				24C0A79520C02F9600906245 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXVariantGroup section */
+		24C0A79D20C02F9600906245 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				24C0A79E20C02F9600906245 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
 /* Begin XCBuildConfiguration section */
-		24C0A78320C02F8600906245 /* Debug */ = {
+		24C0A7A120C02F9600906245 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -175,7 +216,6 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -193,18 +233,16 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
 			};
 			name = Debug;
 		};
-		24C0A78420C02F8600906245 /* Release */ = {
+		24C0A7A220C02F9600906245 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -238,7 +276,6 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -250,67 +287,46 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
 			};
 			name = Release;
 		};
-		24C0A78620C02F8600906245 /* Debug */ = {
+		24C0A7A420C02F9600906245 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 73UWRLJ9ZX;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = AEOverflowButton/Info.plist;
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				INFOPLIST_FILE = AEOverflowMenuDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.addisonelliott.AEOverflowButton;
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				PRODUCT_BUNDLE_IDENTIFIER = com.addisonelliott.AEOverflowMenuDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
-		24C0A78720C02F8600906245 /* Release */ = {
+		24C0A7A520C02F9600906245 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 73UWRLJ9ZX;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = AEOverflowButton/Info.plist;
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				INFOPLIST_FILE = AEOverflowMenuDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.addisonelliott.AEOverflowButton;
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SKIP_INSTALL = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.addisonelliott.AEOverflowMenuDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -319,25 +335,25 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		24C0A77720C02F8600906245 /* Build configuration list for PBXProject "AEOverflowButton" */ = {
+		24C0A78C20C02F9600906245 /* Build configuration list for PBXProject "AEOverflowMenuDemo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				24C0A78320C02F8600906245 /* Debug */,
-				24C0A78420C02F8600906245 /* Release */,
+				24C0A7A120C02F9600906245 /* Debug */,
+				24C0A7A220C02F9600906245 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		24C0A78520C02F8600906245 /* Build configuration list for PBXNativeTarget "AEOverflowButton" */ = {
+		24C0A7A320C02F9600906245 /* Build configuration list for PBXNativeTarget "AEOverflowMenuDemo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				24C0A78620C02F8600906245 /* Debug */,
-				24C0A78720C02F8600906245 /* Release */,
+				24C0A7A420C02F9600906245 /* Debug */,
+				24C0A7A520C02F9600906245 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 24C0A77420C02F8600906245 /* Project object */;
+	rootObject = 24C0A78920C02F9600906245 /* Project object */;
 }

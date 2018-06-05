@@ -1,6 +1,6 @@
 //
 //  AEOverflowMenu.swift
-//  AEOverflowButton
+//  AEOverflowMenu
 //
 //  Created by Social Local Mobile on 5/30/18.
 //  Copyright © 2018 Addison Elliott. All rights reserved.
