@@ -8,12 +8,20 @@
 
 import UIKit
 
-public enum AnimationOption {
+
+/// Type of animation to use for displaying/hiding the overflow menu
+public enum AEAnimationOption {
+    /// Overflow menu is faded in/out
     case Fade
+    
+    /// Overflow menu is expanded or collapsed from the selected anchor corner (see AEAnchorCorner)
     case Expand
+    
+    /// No animation when displaying or hiding the overflow menu
     case None
 }
 
+/// Anchor corner for the overflow menu and the connected button. The overflow menu will be constrained at this corner to the connected button
 public enum AEAnchorCorner {
     /// Anchors overflow menu to the top-left corner of the connected button. If animation is set to expand, then the menu will be expanded/collapsed from this corner
     case TopLeft
@@ -27,6 +35,7 @@ public enum AEAnchorCorner {
     /// Anchors overflow menu to the bottom-right corner of the connected button. If animation is set to expand, then the menu will be expanded/collapsed from this corner
     case BottomRight
     
+    /// Point that represents the normalized corner. X/Y values range from 0.0 to 1.0 and the origin is in the top-left hand corner
     var point: CGPoint {
         switch self {
         case .TopLeft:
@@ -49,6 +58,8 @@ struct AEOverflowItem {
     var callback: (() -> Void)?
 }
 
+/// Menu that displays additional options. This is connected to a button so that the menu is shown when clicked and hidden when clicked away from the menu. This type of menu is common in Android applications.
+/// Overflow menu that displays additional buttons
 @IBDesignable public class AEOverflowMenu: UIView, UITableViewDelegate, UITableViewDataSource, UIGestureRecognizerDelegate {
     // MARK: Private variables and constants
     
@@ -164,10 +175,10 @@ struct AEOverflowItem {
         }
     }
     
-    public var animationShowType: AnimationOption = .Expand
+    public var animationShowType: AEAnimationOption = .Expand
     public var animationShowDuration: Double = 0.25
     
-    public var animationHideType: AnimationOption = .Fade
+    public var animationHideType: AEAnimationOption = .Fade
     public var animationHideDuration: Double = 0.4
     
     public var cornerAnchor: AEAnchorCorner = .TopRight
@@ -320,6 +331,8 @@ struct AEOverflowItem {
     }
     
     public override var intrinsicContentSize: CGSize {
+        // 220 was emperically found to yield the best results
+        // The width is approximately the same as the size of the overflow menu in Android
         return CGSize(width: 220, height: tableView.contentSize.height)
     }
     
@@ -379,6 +392,11 @@ struct AEOverflowItem {
     
     // MARK: Item related functions
     
+    /// Add an item to the menu
+    ///
+    /// - Parameters:
+    ///   - name: text to display on the overflow menu
+    ///   - callback: function that will be called when the item is clicked in the menu
     public func addItem(_ name: String, callback: (() -> Void)? = nil) {
         items.append(AEOverflowItem(name: name, callback: callback))
         
@@ -386,6 +404,9 @@ struct AEOverflowItem {
         invalidateIntrinsicContentSize()
     }
     
+    /// Remove menu item at given index
+    ///
+    /// - Parameter at: zero-based index
     public func removeItem(at: Int) {
         items.remove(at: at)
         
@@ -393,6 +414,7 @@ struct AEOverflowItem {
         invalidateIntrinsicContentSize()
     }
     
+    /// Remove all items from the menu
     public func removeAllItems() {
         items.removeAll()
         
@@ -402,6 +424,11 @@ struct AEOverflowItem {
     
     // MARK: Showing/hiding the menu
     
+    /// Show the menu
+    ///
+    /// Does nothing if the menu is already shown
+    ///
+    /// - Parameter animated: whether to animate the menu in. If true, then the animation will be performed based on the animation type selected (animationShowType)
     public func show(_ animated: Bool = true) {
         // Do nothing if already showing menu
         if !isHidden {
@@ -450,6 +477,11 @@ struct AEOverflowItem {
         }
     }
     
+    /// Hide the menu
+    ///
+    /// Does nothing if the menu is already hidden
+    ///
+    /// - Parameter animated: whether to animate the menu out. If true, then the animation will be performed based on the animation type selected (animationHideType)
     public func hide(_ animated: Bool = true) {
         // Do nothing if menu is already hidden
         if isHidden {
@@ -507,6 +539,9 @@ struct AEOverflowItem {
         }
     }
     
+    /// Toggle the visibility of the menu
+    ///
+    /// - Parameter animated: whether to animate the menu in/out. If true, then the animation will be performed based on the animation type selected (animationShowType or animationHideType)
     public func toggle(_ animated: Bool = true) {
         if isHidden {
             show(animated)
