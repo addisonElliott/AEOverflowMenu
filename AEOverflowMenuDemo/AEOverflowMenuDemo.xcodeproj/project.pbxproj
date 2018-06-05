@@ -7,7 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2471415120C6D74D00215086 /* AEOverflowMenu.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2471415020C6D74D00215086 /* AEOverflowMenu.framework */; };
+		2471415120C6D74D00215086 /* AEOverflowMenu.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2471415020C6D74D00215086 /* AEOverflowMenu.framework */; settings = {ATTRIBUTES = (Required, ); }; };
+		2471415320C6DC7900215086 /* AEOverflowMenu.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2471415220C6DC7900215086 /* AEOverflowMenu.framework */; };
+		2471415420C6DC7900215086 /* AEOverflowMenu.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2471415220C6DC7900215086 /* AEOverflowMenu.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		248E3A5620C0733500ABC9F4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 248E3A5520C0733500ABC9F4 /* Main.storyboard */; };
 		24C0A79520C02F9600906245 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C0A79420C02F9600906245 /* AppDelegate.swift */; };
 		24C0A79720C02F9600906245 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C0A79620C02F9600906245 /* ViewController.swift */; };
@@ -22,6 +24,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				2471415420C6DC7900215086 /* AEOverflowMenu.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -30,6 +33,7 @@
 
 /* Begin PBXFileReference section */
 		2471415020C6D74D00215086 /* AEOverflowMenu.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = AEOverflowMenu.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2471415220C6DC7900215086 /* AEOverflowMenu.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = AEOverflowMenu.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		248E3A5520C0733500ABC9F4 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		24C0A79120C02F9600906245 /* AEOverflowMenuDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AEOverflowMenuDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		24C0A79420C02F9600906245 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -45,6 +49,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2471415120C6D74D00215086 /* AEOverflowMenu.framework in Frameworks */,
+				2471415320C6DC7900215086 /* AEOverflowMenu.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -54,6 +59,7 @@
 		24C0A78820C02F9600906245 = {
 			isa = PBXGroup;
 			children = (
+				2471415220C6DC7900215086 /* AEOverflowMenu.framework */,
 				24C0A79320C02F9600906245 /* AEOverflowMenuDemo */,
 				24C0A79220C02F9600906245 /* Products */,
 				24DB775620C6BB1E00601383 /* Frameworks */,

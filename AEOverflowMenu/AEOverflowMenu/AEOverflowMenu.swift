@@ -231,8 +231,9 @@ struct AEOverflowItem {
     /// Setup the overflow menu
     ///
     /// This method does two things:
-    ///     1. Adds gesture recognizer to the parent view controller so that taps outside of the oveflow menu can be registered to hide the menu
-    ///     2. Given a button or navigation bar button, this menu will be constrained to the button (menu will be constrained to the corner specified in cornerAnchor) and a callback will be setup for the button to toggle the menu when clicked
+    ///
+    /// 1. Adds gesture recognizer to the parent view controller so that taps outside of the oveflow menu can be registered to hide the menu
+    /// 2. Given a button or navigation bar button, this menu will be constrained to the button (menu will be constrained to the corner specified in cornerAnchor) and a callback will be setup for the button to toggle the menu when clicked
     ///
     /// Only button or barButton should be specified, never both. If neither buttons are set, then the menu will not be constrained and no callback will be set. Therefore, this must be done manually in the view controller.
     ///
@@ -308,9 +309,9 @@ struct AEOverflowItem {
     /// Setup the overflow menu.
     ///
     /// This method does two things:
-    ///     1. Adds gesture recognizer to the parent view controller so that taps outside of the oveflow menu can be registered to hide the menu
-    ///     2. This menu will be constrained to the button (menu will be constrained to the corner specified in cornerAnchor) and a callback will be setup for the button to toggle the menu when clicked
     ///
+    /// 1. Adds gesture recognizer to the parent view controller so that taps outside of the oveflow menu can be registered to hide the menu
+    /// 2. This menu will be constrained to the button (menu will be constrained to the corner specified in cornerAnchor) and a callback will be setup for the button to toggle the menu when clicked
     ///
     /// This should be called in viewDidLoad method of UIViewController
     ///
@@ -324,9 +325,9 @@ struct AEOverflowItem {
     /// Setup the overflow menu.
     ///
     /// This method does two things:
-    ///     1. Adds gesture recognizer to the parent view controller so that taps outside of the oveflow menu can be registered to hide the menu
-    ///     2. This menu will be constrained to the button (menu will be constrained to the corner specified in cornerAnchor) and a callback will be setup for the button to toggle the menu when clicked
     ///
+    /// 1. Adds gesture recognizer to the parent view controller so that taps outside of the oveflow menu can be registered to hide the menu
+    /// 2. This menu will be constrained to the button (menu will be constrained to the corner specified in cornerAnchor) and a callback will be setup for the button to toggle the menu when clicked
     ///
     /// This should be called in viewDidLoad method of UIViewController
     ///

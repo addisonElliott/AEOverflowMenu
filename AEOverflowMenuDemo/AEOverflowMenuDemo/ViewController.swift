@@ -60,10 +60,8 @@ class ViewController: UIViewController {
         button.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         button.topAnchor.constraint(equalTo: label.bottomAnchor, constant: 50.0).isActive = true
         
-        overflowMenu.cornerAnchor = .BottomLeft
+        overflowMenu.cornerAnchor = .BottomRight
         overflowMenu.setup(self, button: button)
-        
-        // TODO: Want to setup so that documentation can be seen from here!
     }
     
     func viewReportClicked() {
