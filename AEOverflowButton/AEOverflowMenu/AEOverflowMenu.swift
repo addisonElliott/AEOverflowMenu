@@ -341,7 +341,6 @@ struct AEOverflowItem {
     }
     
     // TODO: Create a nice test/demo
-    // TODO: Upload to GitHub
     // TODO: Create README and documentation for the library
     
     // MARK: Item related functions

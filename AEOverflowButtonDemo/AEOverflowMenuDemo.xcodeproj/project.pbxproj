@@ -12,8 +12,6 @@
 		24C0A79720C02F9600906245 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C0A79620C02F9600906245 /* ViewController.swift */; };
 		24C0A79C20C02F9600906245 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 24C0A79B20C02F9600906245 /* Assets.xcassets */; };
 		24C0A79F20C02F9600906245 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 24C0A79D20C02F9600906245 /* LaunchScreen.storyboard */; };
-		24DB775A20C6BB3000601383 /* AEOverflowMenu.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24DB775920C6BB3000601383 /* AEOverflowMenu.framework */; };
-		24DB775B20C6BB3000601383 /* AEOverflowMenu.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 24DB775920C6BB3000601383 /* AEOverflowMenu.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -23,7 +21,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				24DB775B20C6BB3000601383 /* AEOverflowMenu.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -38,7 +35,6 @@
 		24C0A79B20C02F9600906245 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		24C0A79E20C02F9600906245 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		24C0A7A020C02F9600906245 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		24DB775920C6BB3000601383 /* AEOverflowMenu.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = AEOverflowMenu.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,7 +42,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				24DB775A20C6BB3000601383 /* AEOverflowMenu.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,7 +51,6 @@
 		24C0A78820C02F9600906245 = {
 			isa = PBXGroup;
 			children = (
-				24DB775920C6BB3000601383 /* AEOverflowMenu.framework */,
 				24C0A79320C02F9600906245 /* AEOverflowMenuDemo */,
 				24C0A79220C02F9600906245 /* Products */,
 				24DB775620C6BB1E00601383 /* Frameworks */,
