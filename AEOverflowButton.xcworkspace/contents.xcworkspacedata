@@ -2,9 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "container:/Users/SOLOMO/Documents/XCodeProjects/AEOverflowMenu/AEOverflowButtonDemo/AEOverflowMenuDemo.xcodeproj">
+      location = "container:/Users/SOLOMO/Documents/XCodeProjects/AEOverflowMenu/AEOverflowMenuDemo/AEOverflowMenuDemo.xcodeproj">
    </FileRef>
    <FileRef
-      location = "group:/Users/SOLOMO/Documents/XCodeProjects/AEOverflowMenu/AEOverflowButton/AEOverflowMenu.xcodeproj">
+      location = "group:/Users/SOLOMO/Documents/XCodeProjects/AEOverflowMenu/AEOverflowMenu/AEOverflowMenu.xcodeproj">
    </FileRef>
 </Workspace>
