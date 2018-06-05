@@ -266,6 +266,9 @@ struct AEOverflowItem {
         
         // Note: Make sure that the correct expand corner is set
         if let view = anchorView {
+            // Since we are adding constraints to the menu, then we want to turn this off automatically
+            translatesAutoresizingMaskIntoConstraints = false
+            
             if #available(iOS 9.0, *) {
                 switch cornerAnchor {
                 case .TopLeft:
@@ -344,9 +347,8 @@ struct AEOverflowItem {
     }
     
     @objc func viewTapped(sender: UITapGestureRecognizer) {
-        if !isHidden {
-            hide()
-        }
+        // Hide the menu if somewhere else on the view is tapped and the view is not hidden
+        hide()
     }
     
     override public func prepareForInterfaceBuilder() {
@@ -377,7 +379,9 @@ struct AEOverflowItem {
     public func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldReceive touch: UITouch) -> Bool {
         // Gesture recognizer is only used for hiding the menu when clicking outside the overflow menu
         // So do not recognize the gesture if clicking in the overflow menu
-        return !(touch.view?.isDescendant(of: self) ?? false)
+        // To prevent multiple overflow menus from conflicting with one another for gestures, only accept gestures
+        // for the currently showing menu
+        return !(isHidden || (touch.view?.isDescendant(of: self) ?? false))
     }
     
     // MARK: Table view delegate functions
@@ -499,6 +503,8 @@ struct AEOverflowItem {
                 let oldFrame = self.frame
                 self.layer.anchorPoint = CGPoint(x: 0.5, y: 0.5)
                 self.frame = oldFrame
+                
+                print("Checking isHidden: \(self.isHidden)")
             }
             
         case .Fade:
